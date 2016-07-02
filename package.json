@@ -1,0 +1,32 @@
+{
+  "name": "express-lam",
+  "version": "1.0.0",
+  "description": "learn about me",
+  "main": "app.js",
+  "scripts": {
+    "test": "node app.js",
+    "start": "node app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Mark24Code/express-lam.git"
+  },
+  "author": "mark24code",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Mark24Code/express-lam/issues"
+  },
+  "homepage": "https://github.com/Mark24Code/express-lam#readme",
+  "dependencies": {
+    "bcrypt-nodejs": "0.0.3",
+    "body-parser": "^1.15.2",
+    "connect-flash": "^0.1.1",
+    "cookie-parser": "^1.4.3",
+    "ejs": "^2.4.2",
+    "express": "^4.14.0",
+    "express-session": "^1.14.0",
+    "mongoose": "^4.5.3",
+    "passport": "^0.3.2",
+    "passport-local": "^1.0.0"
+  }
+}
