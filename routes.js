@@ -31,7 +31,10 @@ router.get("/signup", function (req, res) {
 router.post("/signup", function (req, res, next) {
     var username = req.body.username;
     var password = req.body.password;
-
+    console.log(">>>>>>>>");
+    console.log(username);
+    console.log(password);
+    console.log(">>>>>>>>");
     User.findOne({username: username}, function (err, user) {
         if (err) {
             return next(err);
@@ -46,12 +49,26 @@ router.post("/signup", function (req, res, next) {
             password: password
         });
 
-        newUser.save(next);
-    }, passport.authenticate("login", {
-        successRedirect: "/",
-        failureRedirect: "/signup",
-        failureFlash: true
-    }));
+        newUser.save();
+        next();
+    });
+},
+passport.authenticate("login", {
+    successRedirect: "/",
+    failureRedirect: "/signup",
+    failureFlash: true
+}));
+
+router.get("/users/:username", function (req, res, next) {
+    User.findOne({username: req.params.username}, function (err, user) {
+        if (err) {
+            return next(err);
+        }
+        if (!user) {
+            return next(404);
+        }
+        res.render("profile", {user: user});
+    });
 });
 
 module.exports = router;
