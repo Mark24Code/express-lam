@@ -1,7 +1,8 @@
 var express = require("express");
-var passport = require("passport");
+var passport = require("passport");//用户登录认证中间件
 
 var User = require("./models/user");
+
 var router = express.Router();
 
 function ensureAuthenticated(req, res, next) {
