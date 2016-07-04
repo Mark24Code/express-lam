@@ -70,7 +70,12 @@ router.post("/signup", function (req, res, next) {
             username: username,
             password: password
         });
-        newUser.save(next);
+        newUser.save(function (err) {
+            if(err){
+                next(err);
+            }
+            next();
+        });
 
     });
 }, passport.authenticate("login", {
