@@ -1,11 +1,11 @@
-var bodyParser = require("body-parser");
-var cookieParser = require("cookie-parser");
-var express = require("express");
-var flash = require("connect-flash");
-var mongoose = require("mongoose");
-var passport = require("passport");
-var path = require("path");
-var session = require("express-session");
+var bodyParser = require("body-parser");//处理request体，的中间件
+var cookieParser = require("cookie-parser");//处理cookie 的中间件
+var express = require("express");// express网站框架
+var flash = require("connect-flash");//跳转页面保存会话信息中间件
+var mongoose = require("mongoose");//数据库ORM
+var passport = require("passport");//用户登录认真中间件
+var path = require("path");//NodeJS内置系统目录模块
+var session = require("express-session");//简单会话信息中间件
 
 var setUpPassport = require("./setuppassport");
 var routes = require("./routes");
